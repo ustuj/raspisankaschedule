@@ -80,7 +80,7 @@
                                                         <strong>{{ $lesson->subject->short_name ?: $lesson->subject->name }}</strong>
                                                         <span class="lesson-subject">{{ $lesson->subject->name }}</span>
                                                         <span class="lesson-teacher">{{ $lesson->teacher->name }}</span>
-                                                        <span class="lesson-weeks"><span>1 нед.: {{ $lesson->week1_lesson ?? '—' }}</span><i></i><span>2 нед.: {{ $lesson->week2_lesson ?? '—' }}</span></span>
+                                                        
                                                         @if($lesson->note)<span class="lesson-note-preview" title="{{ $lesson->note }}">{{ mb_strlen(trim($lesson->note)) > 15 ? mb_substr(trim($lesson->note), 0, 15).'…' : trim($lesson->note) }}</span>@endif
                                                     </button>
                                                     @if($editable)

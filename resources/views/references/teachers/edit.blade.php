@@ -7,11 +7,11 @@
 <div class="form-grid">
 <div class="form-field form-field--full"><label for="name">ФИО преподавателя</label><input id="name" name="name" type="text" value="{{ old('name', $teacher->name) }}" required></div>
 <div class="form-field"><label for="short_name">Краткое обозначение</label><input id="short_name" name="short_name" type="text" value="{{ old('short_name', $teacher->short_name) }}" required></div>
-<div class="form-field"><label for="color">Цвет</label><div class="teacher-color-select"><select id="color" name="color" required>
+<div class="form-field"><label for="color">Цвет</label><select id="color" name="color" required>
 @foreach (['#2563eb'=>'Синий','#16a34a'=>'Зелёный','#eab308'=>'Жёлтый','#9333ea'=>'Фиолетовый','#dc2626'=>'Красный','#ea580c'=>'Оранжевый','#0891b2'=>'Бирюзовый','#db2777'=>'Розовый'] as $color=>$label)
 <option value="{{ $color }}" @selected(old('color', $teacher->color) === $color)>{{ $label }}</option>
 @endforeach
-</select><span class="teacher-color-dot" id="teacher-color-preview" aria-hidden="true"></span></div>
+</select>
 </div>
 </div>
 <div class="form-field form-field--full">

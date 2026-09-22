@@ -252,7 +252,7 @@ const initSchedule = () => {
             <strong>${escapeHtml(lesson.subject.short_name || lesson.subject.name)}</strong>
             <span class="lesson-subject">${escapeHtml(lesson.subject.name)}</span>
             <span class="lesson-teacher">${escapeHtml(lesson.teacher.name)}</span>
-            <span class="lesson-weeks"><span>1 нед.: ${escapeHtml(lesson.week1 ?? '—')}</span><i></i><span>2 нед.: ${escapeHtml(lesson.week2 ?? '—')}</span></span>
+            
             ${lesson.note ? `<span class="lesson-note-preview" title="${escapeHtml(lesson.note)}">${escapeHtml(truncateNote(lesson.note))}</span>` : ''}`;
         article.appendChild(body);
 
@@ -357,7 +357,7 @@ const initSchedule = () => {
                 const subjectShort = current.item.querySelector('strong')?.textContent || '';
                 const subjectName = current.item.querySelector('span')?.textContent || subjectShort;
                 const teacherName = current.item.closest('[data-teacher-resource]')?.querySelector('.teacher-name')?.textContent || '';
-                optimisticBody.innerHTML = `<div class="lesson-topline"><span class="lesson-type">Лекция</span><span class="lesson-room">—</span></div><strong>${escapeHtml(subjectShort)}</strong><span class="lesson-subject">${escapeHtml(subjectName)}</span><span class="lesson-teacher">${escapeHtml(teacherName)}</span><span class="lesson-weeks"><span>${week === 1 ? '1 нед.' : '2 нед.'}: ${pair}</span></span>`;
+                optimisticBody.innerHTML = `<div class="lesson-topline"><span class="lesson-type">Лекция</span><span class="lesson-room">—</span></div><strong>${escapeHtml(subjectShort)}</strong><span class="lesson-subject">${escapeHtml(subjectName)}</span><span class="lesson-teacher">${escapeHtml(teacherName)}</span>`;
                 optimistic.appendChild(optimisticBody);
                 zone.replaceChildren(optimistic);
                 normalizeZone(zone);
